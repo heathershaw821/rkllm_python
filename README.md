@@ -1,5 +1,7 @@
 # rkllm_python
-RKLLM didn’t come with Python bindings, leaving developers hanging and making it a pain to integrate. So, I said screw that and built these bindings myself, tearing down the barriers and making RKLLM dead simple for Python devs to use. Now you can harness the raw power of the Rockchip NPU for NLP tasks with almost zero hassle. Oh, and did I mention? There's Hugging Face tokenizer integration baked in, so you can easily work with models like the ones I converted here: [https://huggingface.co/heathershaw](https://huggingface.co/heathershaw) using my maintained fork of ez-er-rklm-toolkit2 here: [https://github.com/heathershaw821/ez-er-rkllm-toolkit2](https://github.com/heathershaw821/ez-er-rkllm-toolkit2). You're welcome ❤️
+RKLLM didn’t come with Python bindings, leaving developers hanging and making it a pain to integrate. So, I said screw that and built these bindings myself, tearing down the barriers and making RKLLM dead simple for Python devs to use. Now you can harness the raw power of the Rockchip NPU for NLP tasks with almost zero hassle. Oh, and did I mention? There's Hugging Face tokenizer integration baked in, so you can easily work with models like the ones I converted here: [https://huggingface.co/heathershaw](https://huggingface.co/heathershaw) using my maintained fork of ez-er-rklm-toolkit2 here: [https://github.com/heathershaw821/ez-er-rkllm-toolkit2](https://github.com/heathershaw821/ez-er-rkllm-toolkit2).
+
+**You're welcome ❤️**
 
 
 ## How to use it
