@@ -18,12 +18,12 @@ rkllm = ffi.dlopen(f"{PATH}/librkllmrt.so")
 class RKLLM:
 	def __init__(self, model_path: str,
 			  tokenizer: ChatTokenizer = None,
-			  top_k = 50,
-			  top_p = 0.9,
-			  temperature = 0.8,
-			  repeat_penalty = 1.1,
-			  frequency_penalty = 0.0,
-			  presence_penalty = 0.0,
+			  top_k = 40,
+			  top_p = 0.85,
+			  temperature = 0.7,
+			  repeat_penalty = 1.2,
+			  frequency_penalty = 0.2,
+			  presence_penalty = 0.6,
 			  max_new_tokens = 1024,
 			  max_context_len = 122880,
 			  skip_special_token = False):
