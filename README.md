@@ -19,8 +19,8 @@ rknn = RKLLM(model_path,
 	  repeat_penalty = 1.2,
 	  frequency_penalty = 0.2,
 	  presence_penalty = 0.6,
-    max_new_tokens = 1024,
-    max_context_len = 122880)
+	  max_new_tokens = 1024,
+    	  max_context_len = 122880)
 
 chat = [{"role": "system", "content": """You are a helpful, knowledgeable, and friendly AI assistant.
 Answer questions accurately and concisely, and provide clear explanations when necessary.
