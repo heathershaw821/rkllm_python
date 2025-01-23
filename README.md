@@ -22,7 +22,7 @@ rknn = RKLLM(model_path,
           frequency_penalty = 0.2,
           presence_penalty = 0.6,
           max_new_tokens = 1024,
-          max_context_len = 122880)
+          max_context_len = 131072)
 
 chat = [{"role": "system", "content": """
 You are a helpful, knowledgeable, and friendly AI assistant.
