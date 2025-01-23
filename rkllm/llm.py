@@ -32,6 +32,18 @@ class RKLLM:
 			self.tokenizer = tokenizer
 		else:
 			self.tokenizer = None
+		
+		self.top_k = top_k
+		self.top_p = top_p
+		self.temperature = temperature
+		self.repeat_penalty = repeat_penalty
+		self.frequency_penalty = frequency_penalty
+		self.presence_penalty = presence_penalty
+
+		self.max_new_tokens = max_new_tokens
+		self.max_context_len = max_context_len
+		self.skip_special_token = skip_special_token
+
 		self.model_path = ffi.new("char[]", model_path.encode('utf-8') + b'\0')
 		
 		self.default_param = rkllm.rkllm_createDefaultParam()
@@ -39,16 +51,16 @@ class RKLLM:
 
 		self.param.model_path = self.model_path
 
-		self.param.top_k = top_k
-		self.param.top_p = top_p
-		self.param.temperature = temperature
-		self.param.repeat_penalty = repeat_penalty
-		self.param.frequency_penalty = frequency_penalty
-		self.param.presence_penalty = presence_penalty
+		self.param.top_k = self.top_k
+		self.param.top_p = self.top_p
+		self.param.temperature = self.temperature
+		self.param.repeat_penalty = self.repeat_penalty
+		self.param.frequency_penalty = self.frequency_penalty
+		self.param.presence_penalty = self.presence_penalty
 
-		self.param.max_new_tokens = max_new_tokens
-		self.param.max_context_len = max_context_len
-		self.param.skip_special_token = skip_special_token
+		self.param.max_new_tokens = self.max_new_tokens
+		self.param.max_context_len = self.max_context_len
+		self.param.skip_special_token = self.skip_special_token
 		self.param.extend_param.base_domain_id = 0
 		
 		self.llmHandle = ffi.new("LLMHandle *")
