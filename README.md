@@ -14,15 +14,15 @@ model_path = "./Llama-3.2-3B-Instruct-chatml-rk3588-1.1.2/Llama-3.2-3B/Llama-3.2
 tokenizer = ChatTokenizer("./Llama-3.2-3B-Instruct-chatml-rk3588-1.1.2/tokenizer_config.json")
 
 rknn = RKLLM(model_path,
-	  tokenizer=tokenizer
-	  top_k = 40,
-	  top_p = 0.85,
-	  temperature = 0.7,
-	  repeat_penalty = 1.2,
-	  frequency_penalty = 0.2,
-	  presence_penalty = 0.6,
-	  max_new_tokens = 1024,
-    	  max_context_len = 122880)
+          tokenizer=tokenizer
+          top_k = 40,
+          top_p = 0.85,
+          temperature = 0.7,
+          repeat_penalty = 1.2,
+          frequency_penalty = 0.2,
+          presence_penalty = 0.6,
+          max_new_tokens = 1024,
+          max_context_len = 122880)
 
 chat = [{"role": "system", "content": """
 You are a helpful, knowledgeable, and friendly AI assistant.
