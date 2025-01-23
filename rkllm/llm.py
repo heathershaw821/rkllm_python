@@ -16,7 +16,17 @@ rkllm = ffi.dlopen(f"{PATH}/librkllmrt.so")
 
 
 class RKLLM:
-	def __init__(self, model_path: str, tokenizer: ChatTokenizer = None):
+	def __init__(self, model_path: str,
+			  tokenizer: ChatTokenizer = None,
+			  top_k = 50,
+			  top_p = 0.9,
+			  temperature = 0.8,
+			  repeat_penalty = 1.1,
+			  frequency_penalty = 0.0,
+			  presence_penalty = 0.0,
+			  max_new_tokens = 1024,
+			  max_context_len = 122880,
+			  skip_special_token = False):
 		self.result = ""
 		if tokenizer:
 			self.tokenizer = tokenizer
@@ -29,16 +39,16 @@ class RKLLM:
 
 		self.param.model_path = self.model_path
 
-		self.param.top_k = 50
-		self.param.top_p = 0.9
-		self.param.temperature = 0.8
-		self.param.repeat_penalty = 1.1
-		self.param.frequency_penalty = 0.0
-		self.param.presence_penalty = 0.0
+		self.param.top_k = top_k
+		self.param.top_p = top_p
+		self.param.temperature = temperature
+		self.param.repeat_penalty = repeat_penalty
+		self.param.frequency_penalty = frequency_penalty
+		self.param.presence_penalty = presence_penalty
 
-		self.param.max_new_tokens = 1024
-		self.param.max_context_len = 122880
-		self.param.skip_special_token = False
+		self.param.max_new_tokens = max_new_tokens
+		self.param.max_context_len = max_context_len
+		self.param.skip_special_token = skip_special_token
 		self.param.extend_param.base_domain_id = 0
 		
 		self.llmHandle = ffi.new("LLMHandle *")
