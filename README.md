@@ -10,8 +10,8 @@ RKLLM didn’t come with Python bindings, leaving developers hanging and making 
 from rkllm.llm import RKLLM
 from rkllm.tokens import ChatTokenizer
 
-model_path = "./Llama-3.2-3B/Llama-3.2-3B.rkllm"
-tokenizer = ChatTokenizer("./Llama-3.2-3B/tokenizer_config.json")
+model_path = "./Llama-3.2-3B-Instruct-chatml-rk3588-1.1.2/Llama-3.2-3B/Llama-3.2-3B.rkllm"
+tokenizer = ChatTokenizer("./Llama-3.2-3B-Instruct-chatml-rk3588-1.1.2/tokenizer_config.json")
 
 rknn = RKLLM(model_path,
 	  tokenizer=tokenizer
