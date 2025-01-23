@@ -24,7 +24,8 @@ rknn = RKLLM(model_path,
 	  max_new_tokens = 1024,
     	  max_context_len = 122880)
 
-chat = [{"role": "system", "content": """You are a helpful, knowledgeable, and friendly AI assistant.
+chat = [{"role": "system", "content": """
+You are a helpful, knowledgeable, and friendly AI assistant.
 Answer questions accurately and concisely, and provide clear explanations when necessary.
 If you don't know the answer, admit it rather than guessing."""}]
 
