@@ -1,6 +1,5 @@
 from cffi import FFI
 import os
-import signal
 from time import sleep
 from .tokens import ChatTokenizer
 
@@ -68,7 +67,6 @@ class RKLLM:
 		ret = rkllm.rkllm_init(self.llmHandle, self.param, llm_callback)
 		if ret != 0:
 			raise RuntimeError("Failed to load RKNN model")
-		signal.signal(signal.SIGINT, self.destroy_signal)
 
 
 	def chat(self, chat):
@@ -93,13 +91,12 @@ class RKLLM:
 			raise RuntimeError("Inference failed")
 		return {"role": "assistant", "content": self.result}
 
-	def destroy_signal(self, sig, frame):
-		signal.signal(signal.SIGINT, signal.SIG_IGN)
+	def destroy(self, sig, frame):
 		rkllm.rkllm_abort(self.llmHandle[0])
 		while rkllm.rkllm_is_running(self.llmHandle[0]) == 0:
 			sleep(1)
 		rkllm.rkllm_destroy(self.llmHandle[0])
-		exit(0)
+
 
 @ffi.callback("void(RKLLMResult *, void *, LLMCallState)")
 def llm_callback(result, self, state):
