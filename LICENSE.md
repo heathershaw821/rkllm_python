@@ -89,7 +89,8 @@ should never be owned or restricted. You join a larger movement that seeks to en
 freedom of all knowledge, ideas, and digital tools. This software is a part of the greater  
 human legacy—a legacy built on the work and contributions of all people. It belongs to **no one**,  
 but it belongs to **everyone**. You are **required** to redistribute this license with all copies of
-this software in part or in whole, including any modified versions of any pieces of this software.
+this software, including any modified versions of any piece of this software or partial distributions
+of said software..
 
 Together, we will dismantle the systems of control and ownership that seek to commodify  
 and restrict knowledge. We will ensure that information continues to flow freely, for the  
